@@ -1,0 +1,40 @@
+<main>
+    <form [formGroup]="form">
+        <div class="dragon">
+        <label> LOGIN</label>
+        <div class="input">
+          <input
+            type="text"
+            placeholder="Digite seu usuário.."
+            class="dragon__input"
+            name="userName" formControlName="userName"
+          />
+          <small class="erro" 
+          *ngIf="(form.get('userName')?.dirty || form.get('userName')?.touched) && form.get('userName')?.hasError('required')">
+          Campo obrigatório.... 
+        </small>
+        </div>
+
+        <div class="input">
+          <input
+            type="text"
+            placeholder="Digite sua senha.."
+            class="dragon__input"
+            name="password" formControlName="password"
+          />
+          <small class="erro" 
+          *ngIf="(form.get('password')?.dirty || form.get('password')?.touched) && form.get('password')?.hasError('required')">
+          Campo obrigatório.... 
+        </small>
+        </div>
+        
+
+        <div class="button" >
+          <button class="button__btn" (click)="login()" *ngIf="!form.invalid">
+            <span> Entrar</span>
+          </button>
+        </div>
+        
+      </div>
+    </form>
+</main>

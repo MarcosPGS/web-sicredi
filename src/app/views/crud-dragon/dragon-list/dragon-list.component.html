@@ -1,0 +1,36 @@
+<div >
+  <div class="header">
+    <div class="dragon__buttons">
+      <button class="dragon__buttons__btn" [routerLink]="['adicionar']">
+        <span> Adicionar Dragão </span>
+      </button>
+      <button class="dragon__buttons__btn__deslogar" (click)="logout()">
+        <span> <img src="assets/icons/logout.svg" alt="search" > </span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="dragon" *ngFor="let dragon of dragons | arraySort: 'name'" >
+    <div class="dragon__name">
+      <span>{{ dragon.name}}</span>
+    </div>
+    <div class="dragon__buttons">
+      <button class="dragon__buttons__btn" [routerLink]="['editar', dragon.id]">
+        <span>
+          <img src="assets/icons/edit.svg" alt="search" >
+        </span>
+      </button>
+      <button class="dragon__buttons__btn" (click)="delete(dragon.id)">
+        <span>
+          <img src="assets/icons/delete.svg" alt="search" >
+        </span>
+      </button>
+      <button class="dragon__buttons__btn" [routerLink]="['details', dragon.id]">
+        <span>
+          <img src="assets/icons/search.svg" alt="search" >
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

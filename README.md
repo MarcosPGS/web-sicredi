@@ -1,5 +1,12 @@
 # WebSicredi
 
+## Credenciais
+- Usuário: dragon
+- Senha: 12345
+
+## Credenciais
+ng test --code-coverage
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
 ## Development server

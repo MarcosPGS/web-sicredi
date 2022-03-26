@@ -1,0 +1,16 @@
+:host {
+    .details {
+        text-align: center;
+        p { 
+            padding-top: 10px;
+            font-size: 30px;
+        }
+       div {
+            padding-top: 10px;
+            span {
+                color: var(--secondary-color);
+                word-break: normal !important;
+            }
+        }
+    }
+}

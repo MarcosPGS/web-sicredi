@@ -1,0 +1,43 @@
+<main>
+      <form [formGroup]="form">
+        <div class="dragon">
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Digite o nome do Dragão..."
+              class="dragon__input"
+              name="name" formControlName="name"
+            />
+            <small class="erro" 
+            *ngIf="(form.get('name')?.dirty || form.get('name')?.touched) && form.get('name')?.hasError('required')">
+            Campo obrigatório.... 
+          </small>
+          </div>
+  
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Digite o tipo do Dragão..."
+              class="dragon__input"
+              name="type" formControlName="type"
+            />
+            <small class="erro" 
+            *ngIf="(form.get('type')?.dirty || form.get('type')?.touched) && form.get('type')?.hasError('required')">
+            Campo obrigatório.... 
+          </small>
+          </div>
+          
+  
+          <div class="button" >
+              <button class="button__btn" [routerLink]="['/home']">
+                  <span> Voltar </span>
+                </button>
+            <button class="button__btn" (click)="save()" *ngIf="!form.invalid">
+              <span> Salvar</span>
+            </button>
+          </div>
+          
+        </div>
+      </form>
+  </main>
+  
